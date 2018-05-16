@@ -1,7 +1,9 @@
 # CSV-to-HTML-for-psychologists
-converts .csv file to .html file for psychological experiments
+converts .csv file to .html file for psychological experiments<br>
 
-# Usage:
+For more details, please refer to examples
+
+# Usage
     python3 generate_html.py <instruction>.txt <experiment>.csv
 
 # CSV(utf-8) template
