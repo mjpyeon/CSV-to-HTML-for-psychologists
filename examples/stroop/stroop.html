@@ -1,0 +1,996 @@
+<html>
+<head>
+        <title>stroop</title>
+        <meta charset="utf-8">
+        <script src="jspsych.js"></script>
+        <script src="jspsych-6/plugins/jspsych-html-keyboard-response.js"></script>
+        <script src="jspsych-6/plugins/jspsych-html-button-response.js"></script>
+        <script src="jspsych-6/plugins/jspsych-fullscreen.js"></script>
+        <script src="jspsych-6/plugins/jspsych-categorize-html.js"></script>
+        <link rel="stylesheet" href="jspsych.css"></link>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        </head>
+<body>
+<script>
+var timeline = [];
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: "연습한번 해볼까요?",
+trial_duration: 2000,
+data: { test_part: "trial"},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/bb1.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "trial", correct_response: 3},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/rr1.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "trial", correct_response: 3},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/gg1.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "trial", correct_response: 1},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/yy1.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "trial", correct_response: 0},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/rr1.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "trial", correct_response: 2},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: "이제 시작합니다!",
+trial_duration: 2000,
+data: { test_part: "trial"},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/green/anger1.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 1},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/blue/anger1.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 2},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/red/anger1.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 0},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/yellow/anger1.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 3},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/yellow/anger2.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 3},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/green/anger2.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 1},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/red/anger2.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 0},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/blue/anger2.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 2},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/yellow/anger3.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 3},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/blue/anger3.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 2},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/green/anger3.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 1},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/red/anger3.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 0},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/green/anger4.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 1},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/blue/anger4.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 2},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/yellow/anger4.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 3},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/red/anger4.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 0},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/blue/anger5.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 2},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/red/anger5.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 0},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/green/anger5.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 1},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/yellow/anger5.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 3},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/yellow/anger6.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 3},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/green/anger6.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 1},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/blue/anger6.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 2},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/red/anger6.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 0},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/red/neutral1.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 0},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/blue/neutral1.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 2},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/green/neutral1.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 1},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/yellow/neutral1.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 3},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/green/neutral2.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 1},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/red/neutral2.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 0},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/blue/neutral2.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 2},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/yellow/neutral2.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 3},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/yellow/neutral3.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 3},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/red/neutral3.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 0},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/blue/neutral3.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 2},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/green/neutral3.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 1},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/yellow/neutral4.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 3},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/green/neutral4.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 1},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/red/neutral4.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 0},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/blue/neutral4.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 2},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/green/neutral5.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 1},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/blue/neutral5.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 2},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/red/neutral5.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 0},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/yellow/neutral5.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 3},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/yellow/neutral6.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 3},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/green/neutral6.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 1},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/red/neutral6.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 0},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: '<img src = "img/fix.png"><br><br>',
+trial_duration: 1500,
+choices: jsPsych.NO_KEYS,
+data: { test_part: "fix"},
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/stroop/blue/neutral6.png"><br><br>',
+trial_duration: 5000,
+choices: ["R","G","B","Y"],
+data: { test_part: "test", correct_response: 2},
+response_ends_trial: true,
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: function () {
+				var trials = jsPsych.data.get().filter({ test_part: 'test' });
+				var correct_trials = trials.filter({ correct: true });
+				var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
+				var rt = trials.select('rt').values;
+				return "<p>You responded correctly on " + accuracy + "% of the trials.</p>" +
+					"<p>Your average response time was " + rt + "ms.</p>" +
+					"<p>Press any key to complete the experiment. Thank you!</p>";
+			},
+trial_duration: 5000,
+});
+jsPsych.init({
+			timeline: timeline,
+			show_preload_progress_bar: true
+		});
+</script>
+</body>
+</html>

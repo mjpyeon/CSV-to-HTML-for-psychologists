@@ -1,0 +1,2784 @@
+<html>
+<head>
+        <title>cardsorting</title>
+        <meta charset="utf-8">
+        <script src="jspsych.js"></script>
+        <script src="jspsych-6/plugins/jspsych-html-keyboard-response.js"></script>
+        <script src="jspsych-6/plugins/jspsych-html-button-response.js"></script>
+        <script src="jspsych-6/plugins/jspsych-fullscreen.js"></script>
+        <script src="jspsych-6/plugins/jspsych-categorize-html.js"></script>
+        <link rel="stylesheet" href="jspsych.css"></link>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        </head>
+<body>
+<script>
+var timeline = [];
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: "연습 한번 해 볼까요?",
+trial_duration: 2000,
+data: { test_part: "test"},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross1green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star3red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 0},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross2green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle4yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle1yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star3blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle2yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle3yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle2green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star4red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: "이제 시작합니다!",
+trial_duration: 2000,
+data: { test_part: "test"},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star2yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star1red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle1yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star1green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star1blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle1blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 0},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star2red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle2red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 0},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle2yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle4green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 0},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle4green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle3green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross3green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross4green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle1green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 0},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross1blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 0},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle3red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle2blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle4yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star2blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star4green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star4blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross3red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 0},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle4red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 0},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross1red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 0},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle3blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross2green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle1blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle1red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 0},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle4blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross4yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross3yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross2red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle3blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 0},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle4yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star1yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle4red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle3red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross1yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle1green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 0},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross2yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle2blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star3green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle3green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross4blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star4red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross4red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star2green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross2blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle2green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 1},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle3yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle4blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle2red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 0},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star3blue.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star3yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle1yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/triangle3yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/star3red.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 0},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/circle2yellow.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 3},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-button-response',
+stimulus: '<img src = "img/cardsorting/cross1green.png"><br><br>',
+choices: ['<img src="img/cardsorting/circle1red.png">','<img src="img/cardsorting/triangle2green.png">','<img src="img/cardsorting/cross3blue.png">','<img src="img/cardsorting/star4yellow.png">'],
+data: { test_part: "test", correct_response: 2},
+on_finish :function (data) {
+                    data.correct = data.button_pressed == data.correct_response;
+                    }
+});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/correct.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return true;
+						} else {
+							return false;
+						}
+					}
+				});
+timeline.push({
+					timeline: [{
+                    type: 'html-keyboard-response',
+                    stimulus: '<img src="img/wrong.png">',
+                    trial_duration: 2000
+                    }],
+					conditional_function: function (data) {
+						var data = jsPsych.data.get().last(1).values()[0];
+						if (data.correct_response == data.button_pressed) {
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+timeline.push({
+type: 'html-keyboard-response',
+stimulus: function () {
+				var trials = jsPsych.data.get().filter({ test_part: 'test' });
+				var correct_trials = trials.filter({ correct: true });
+				var accuracy = Math.round(correct_trials.count() / trials.count() * 100);
+				var rt = trials.select('rt').values;
+				return "<p>You responded correctly on " + accuracy + "% of the trials.</p>" +
+					"<p>Your average response time was " + rt + "ms.</p>" +
+					"<p>Press any key to complete the experiment. Thank you!</p>";
+			},
+trial_duration: 5000,
+});
+jsPsych.init({
+			timeline: timeline,
+			show_preload_progress_bar: true
+		});
+</script>
+</body>
+</html>
